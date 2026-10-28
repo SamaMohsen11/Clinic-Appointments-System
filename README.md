@@ -1,12 +1,9 @@
 # Clinic-Appointments-System
 
-
-# Clinic Appointment Booking System
-
 ## Team Members
 
 | Student ID | Name | Branch | Pull Request |
-| ID 1 | Student 1 | - | - |
+| 20242170 | Sama Mohsen Rashad | sama-branch | - |
 | ID 2 | Student 2 | - | - |
 | ID 3 | Student 3 | - | - |
 
@@ -14,4 +11,4 @@
 
 Maximum upcoming appointments per patient (N): 3
 
-Conflict Drill: UNCLAIMED
+Conflict Drill: Sama
