@@ -1,0 +1,40 @@
+name: Check Clinic Appointments
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check required files
+        run: |
+          test -f Requirements.md
+          test -f Use_cases.md
+          test -f CandidateClass.md
+          test -f class-diagram.md
+          test -f SequenceDiagram.md
+          test -f main.py
+
+      - name: Check for TODOs and conflict markers
+        run: |
+          ! grep -nE 'TODO|<<<<<<<|=======|>>>>>>>' \
+            Requirements.md \
+            Use_cases.md \
+            CandidateClass.md \
+            class-diagram.md \
+            SequenceDiagram.md \
+            main.py
+
+      - name: Run Python program
+        run: python main.py
